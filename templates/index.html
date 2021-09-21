@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="{{url_for('static', filename='autoscroll.js')}}"></script>
+    <title>Raspberry Pi Management</title>
+</head>
+<body>
+    <h1 style="margin: 100px; text-align: center; font-size: 500%;">Raspberry Pi Management</h1>
+    <div style="text-align: center">
+            <button type="submit" style="font-size: 250%; padding-left: 40px; padding-right: 40px"
+                    class="btn btn-primary" onclick='location.href = "/up"'>Up</button>
+            <button type="submit" style="margin-left: 50px; font-size: 250%; padding-left: 20px; padding-right: 20px"
+                    class="btn btn-primary" onclick='location.href = "/down"'>Down</button>
+    </div>
+    <div style="margin-top: 50px; margin-left: 5%">
+        <h1 style="font-size: 300%;">Logs</h1>
+    </div>
+    <div style="margin-top: 10px; margin-left: 5%">
+        <textarea id="textarea" rows='16' style="width: 90%">{% if logs %}{{ logs }}{% else %}Empty{% endif %}</textarea>
+    </div>
+</body>
+</html>
